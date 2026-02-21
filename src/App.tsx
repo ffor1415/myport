@@ -52,11 +52,20 @@ function App() {
       features: ['Interactive Dashboards', 'Sales Trends', 'Business Insights']
     },
     {
-      title: 'Home Automation with Voice Control',
-      description: 'Smart home system using ESP8266 with voice commands via Google API and Bluetooth communication.',
-      tech: ['ESP8266', 'MIT App Inventor', 'Google API', 'Bluetooth'],
-      features: ['Voice Control', 'Custom Mobile App', 'Real-time Communication']
-    }
+  title: 'CashFlow - Smart Expense Tracker',
+  description: 'A modern web-based expense tracking application with secure user authentication, income & expense management, borrow-lend tracking, and interactive financial dashboards powered by Supabase backend.',
+  tech: ['React', 'TypeScript', 'Supabase', 'Netlify', 'Tailwind CSS', 'Vite'],
+  link: "https://cashesflow.netlify.app/",
+  features: [
+    'User Authentication',
+    'Income & Expense Tracking',
+    'Borrow & Lend Management',
+    'Interactive Dashboard & Charts',
+    'Category Management',
+    'Secure Row Level Security (RLS)',
+    'Responsive Modern UI'
+  ]
+}
   ];
 
   const certifications = [
@@ -252,45 +261,96 @@ function App() {
         </div>
       </section>
 
-      <section id="projects" className="py-20 px-4 bg-gray-100/50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto"></div>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div key={index} className="bg-white rounded-xl border border-gray-200 hover:border-blue-500 transition-all overflow-hidden group shadow-sm">
-                <div className="p-6 space-y-4">
-                  <div className="flex items-start justify-between">
-                    <h3 className="text-xl font-semibold group-hover:text-blue-600 transition-colors text-gray-900">{project.title}</h3>
-                    <ExternalLink className="text-gray-400 group-hover:text-blue-600 transition-colors" size={20} />
-                  </div>
-                  <p className="text-gray-600 leading-relaxed">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <span key={tech} className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="pt-4 border-t border-gray-200">
-                    <h4 className="text-sm font-semibold text-gray-900 mb-2">Key Features:</h4>
-                    <ul className="space-y-1">
-                      {project.features.map((feature, idx) => (
-                        <li key={idx} className="text-sm text-gray-600 flex items-start gap-2">
-                          <span className="text-blue-600 mt-1">•</span>
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+     <section id="projects" className="py-20 px-4 bg-gray-100/50">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto"></div>
         </div>
-      </section>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl border border-gray-200 hover:border-blue-500 transition-all overflow-hidden group shadow-sm"
+            >
+              <div className="p-6 space-y-4">
+
+                {/* TITLE + LINK ICON */}
+                <div className="flex items-start justify-between">
+                  <h3 className="text-xl font-semibold group-hover:text-blue-600 transition-colors text-gray-900">
+                    {project.title}
+                  </h3>
+
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ExternalLink
+                        className="text-gray-400 group-hover:text-blue-600 transition-colors"
+                        size={20}
+                      />
+                    </a>
+                  )}
+                </div>
+
+                {/* DESCRIPTION */}
+                <p className="text-gray-600 leading-relaxed">
+                  {project.description}
+                </p>
+
+                {/* TECH STACK */}
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* FEATURES */}
+                <div className="pt-4 border-t border-gray-200">
+                  <h4 className="text-sm font-semibold text-gray-900 mb-2">
+                    Key Features:
+                  </h4>
+
+                  <ul className="space-y-1">
+                    {project.features.map((feature, idx) => (
+                      <li
+                        key={idx}
+                        className="text-sm text-gray-600 flex items-start gap-2"
+                      >
+                        <span className="text-blue-600 mt-1">•</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* VISIT PROJECT BUTTON */}
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 mt-4 text-blue-600 font-medium hover:underline"
+                    >
+                      Visit Project
+                      <ExternalLink size={16} />
+                    </a>
+                  )}
+                </div>
+
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
 
       <section id="experience" className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
