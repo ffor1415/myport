@@ -368,7 +368,7 @@ function App() {
                   <div className="flex justify-between items-start mb-4">
                     <div>
                       <h3 className="text-2xl font-semibold text-blue-600">REVA Academy for Corporate Excellence (RACE)</h3>
-                      <p className="text-gray-600 mt-1">Internship - Azure Cloud Training Support</p>
+                      <p className="text-gray-600 mt-1">Internship -  Teaching Assistant</p>
                     </div>
                     <div className="text-right">
                       <p className="text-sm font-medium text-gray-700">June 2024 - Present</p>
